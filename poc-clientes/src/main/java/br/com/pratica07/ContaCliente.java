@@ -6,9 +6,19 @@ public class ContaCliente {
     private Cliente cliente;
     private double saldo = 0.0;
 
+    public ContaCliente(int id, Cliente cliente, double saldo) {
+        this.id = id;
+        this.cliente = cliente;
+        this.saldo = saldo;
+    }
+
     public ContaCliente(int id, Cliente cliente) {
         this.id = id;
         this.cliente = cliente;
+    }
+
+    public ContaCliente(int id) {
+        this.id = id;
     }
 
     public int getId() {
@@ -35,20 +45,26 @@ public class ContaCliente {
         this.saldo = saldo;
     }
 
-    public void addDeposito(double valor) {
+    public double addDeposito(double valor) {
         saldo += valor;
+        System.out.println("Novo saldo: R$" + String.format("%.2f", saldo));
+        return saldo;
     }
 
-    public void subSaldo(double valor) {
+    public double subSaldo(double valor) {
+        if (valor > saldo) {
+            System.out.println("Saldo insuficiente para realizar o saque.");
+            return saldo;
+        }
+
         saldo -= valor;
+        System.out.println("Novo saldo: R$" + String.format("%.2f", saldo));
+        return saldo;
     }
 
     @Override
     public String toString() {
-        return "ContaCliente{" +
-                "id=" + id +
-                ", cliente=" + cliente +
-                ", saldo=" + saldo +
-                '}';
+        return cliente.getNome() + "(" + cliente.getId() + ") saldo=R$"
+                + String.format("%.2f", saldo);
     }
 }
