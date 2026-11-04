@@ -8,7 +8,7 @@ class ContaClienteTest {
 
     @Test
     void deveCriarContaComSaldoInicialZero() {
-        Cliente cliente = new Cliente(1, "Gabriel", 10, "m");
+        Cliente cliente = new Cliente(1, "Gabriel", 10);
         ContaCliente conta = new ContaCliente(1, cliente);
 
         assertEquals(1, conta.getId());
@@ -18,7 +18,7 @@ class ContaClienteTest {
 
     @Test
     void deveAdicionarDepositoAoSaldo() {
-        Cliente cliente = new Cliente(1, "Gabriel", 10, "m");
+        Cliente cliente = new Cliente(1, "Gabriel", 10);
         ContaCliente conta = new ContaCliente(1, cliente);
 
         conta.addDeposito(100.0);
@@ -28,7 +28,7 @@ class ContaClienteTest {
 
     @Test
     void deveSubtrairValorDoSaldo() {
-        Cliente cliente = new Cliente(2, "Maria", 10, "f");
+        Cliente cliente = new Cliente(2, "Maria", 10);
         ContaCliente conta = new ContaCliente(2, cliente);
 
         conta.addDeposito(200.0);
@@ -39,7 +39,7 @@ class ContaClienteTest {
 
     @Test
     void devePermitirDepositosSucessivos() {
-        Cliente cliente = new Cliente(3, "Alex", 0, "nd");
+        Cliente cliente = new Cliente(3, "Alex", 0);
         ContaCliente conta = new ContaCliente(3, cliente);
 
         conta.addDeposito(100.0);

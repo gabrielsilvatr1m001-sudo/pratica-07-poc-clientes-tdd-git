@@ -1,4 +1,3 @@
-
 package br.com.pratica07;
 
 public class Cliente {
@@ -6,29 +5,24 @@ public class Cliente {
     private int id;
     private String nome;
     private int desconto;
-    private String genero;
+    private String genero = "nd";
 
-    public Cliente(int id, String nome, int desconto, String genero) {
+    public Cliente(int id, String nome, int desconto) {
         this.id = id;
         this.nome = nome;
         this.desconto = desconto;
-        setGenero(genero);
     }
 
     public int getId() {
         return id;
     }
 
-    public void setId(int id) {
-        this.id = id;
-    }
-
     public String getNome() {
         return nome;
     }
 
-    public void setNome(String nome) {
-        this.nome = nome;
+    public String getGenero() {
+        return genero;
     }
 
     public int getDesconto() {
@@ -39,30 +33,8 @@ public class Cliente {
         this.desconto = desconto;
     }
 
-    public String getGenero() {
-        return genero;
-    }
-
-    public void setGenero(String genero) {
-        if (!"m".equals(genero) &&
-            !"f".equals(genero) &&
-            !"nd".equals(genero)) {
-
-            throw new IllegalArgumentException(
-                "Gênero deve ser m, f ou nd"
-            );
-        }
-
-        this.genero = genero;
-    }
-
     @Override
     public String toString() {
-        return "Cliente{" +
-                "id=" + id +
-                ", nome='" + nome + '\'' +
-                ", desconto=" + desconto +
-                ", genero='" + genero + '\'' +
-                '}';
+        return nome + "(" + id + ")(" + desconto + "%)";
     }
 }
