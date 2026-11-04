@@ -12,6 +12,10 @@ public class FaturaCliente {
         this.valor = valor;
     }
 
+    public FaturaCliente(int id) {
+        this.id = id;
+    }
+
     public int getId() {
         return id;
     }
@@ -43,11 +47,8 @@ public class FaturaCliente {
 
     @Override
     public String toString() {
-        return "FaturaCliente{" +
-                "id=" + id +
+        return "Fatura [id=" + id +
                 ", cliente=" + cliente +
-                ", valor=" + valor +
-                ", valorComDesconto=" + getValorComDesconto() +
-                '}';
+                ", valor=" + valor + " ]";
     }
 }
