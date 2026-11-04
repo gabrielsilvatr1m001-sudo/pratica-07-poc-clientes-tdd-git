@@ -33,4 +33,18 @@ class ClienteTest {
         Cliente cliente = new Cliente(3, "Alex", 10, "nd");
         assertEquals("nd", cliente.getGenero());
     }
+
+    @Test
+    void naoDeveAceitarGeneroInvalido() {
+        assertThrows(IllegalArgumentException.class, () -> {
+            new Cliente(4, "João", 10, "x");
+        });
+    }
+
+    @Test
+    void naoDeveAceitarGeneroNulo() {
+        assertThrows(IllegalArgumentException.class, () -> {
+            new Cliente(5, "João", 10, null);
+        });
+    }
 }
