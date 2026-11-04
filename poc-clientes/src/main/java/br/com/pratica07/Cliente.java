@@ -1,3 +1,4 @@
+
 package br.com.pratica07;
 
 public class Cliente {
@@ -43,8 +44,10 @@ public class Cliente {
     }
 
     public void setGenero(String genero) {
-        if (genero == null ||
-            !(genero.equals("m") || genero.equals("f") || genero.equals("nd"))) {
+        if (!"m".equals(genero) &&
+            !"f".equals(genero) &&
+            !"nd".equals(genero)) {
+
             throw new IllegalArgumentException(
                 "Gênero deve ser m, f ou nd"
             );
