@@ -4,12 +4,11 @@ public class ContaCliente {
 
     private int id;
     private Cliente cliente;
-    private double saldo;
+    private double saldo = 0.0;
 
     public ContaCliente(int id, Cliente cliente) {
         this.id = id;
         this.cliente = cliente;
-        this.saldo = 0.0;
     }
 
     public int getId() {
