@@ -37,7 +37,8 @@ public class FaturaCliente {
     }
 
     public double getValorComDesconto() {
-        return valor - (valor * cliente.getDesconto() / 100.0);
+        double percentualDesconto = cliente.getDesconto() / 100.0;
+        return valor * (1 - percentualDesconto);
     }
 
     @Override
